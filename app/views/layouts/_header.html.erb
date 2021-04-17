@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
   <%= link_to "トップへ", mikomis_path %>
   <%= link_to "見込みを登録", new_mikomi_path %>
+  <%= link_to "自分の見込み一覧", users_path %>
   <%= link_to "アカウント編集", edit_user_registration_path %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
 <% else %>
