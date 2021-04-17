@@ -8,7 +8,7 @@ class MikomisController < ApplicationController
   end
 
   def create
-    Mikomi.create!(shohin: mikomi_params[:shohin], kansan: mikomi_params[:kansan], user_id: current_user.id)
+    current_user.mikomis.create!(mikomi_params)
   end
 
   private
