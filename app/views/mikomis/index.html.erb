@@ -1,0 +1,9 @@
+<h1>見込み一覧</h1>
+<% if user_signed_in? %>
+  <% @mikomis.each do |mikomi| %>
+    <p><%= mikomi.user_name %><%= mikomi.shohin %>:<%= mikomi.kansan %></p>
+  <% end %>
+<% else %>
+  <p>ログインしなさい</p>
+<% end %>
+

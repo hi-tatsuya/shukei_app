@@ -1,0 +1,2 @@
+module MikomisHelper
+end
