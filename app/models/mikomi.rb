@@ -1,0 +1,2 @@
+class Mikomi < ApplicationRecord
+end
