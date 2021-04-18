@@ -27,7 +27,7 @@ class MikomisController < ApplicationController
 
   private
   def mikomi_params
-    params.require(:mikomi).permit(:shohin, :kansan, :name)
+    params.require(:mikomi).permit(:shohin, :kansan, :name, :constract_date)
   end
 
   def set_mikomi

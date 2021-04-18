@@ -2,9 +2,10 @@
 <% if user_signed_in? %>
   <% @mikomis.each do |mikomi| %>
     <p>
+    <%= mikomi.user.name %>:
     <%= mikomi.shohin %>:
     <%= mikomi.kansan %>:
-    <%= mikomi.user.name %>:
+    <%= mikomi.constract_date %>
     <% if current_user.id == mikomi.user.id %>
       <%= link_to "編集", edit_mikomi_path(mikomi) %>
       <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" } %>
