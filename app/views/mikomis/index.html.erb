@@ -1,7 +1,15 @@
 <h1>見込み一覧</h1>
 <% if user_signed_in? %>
   <% @mikomis.each do |mikomi| %>
-    <p><%= mikomi.user_name %><%= mikomi.shohin %>:<%= mikomi.kansan %>:<%= mikomi.user.id %></p>
+    <p>
+    <%= mikomi.shohin %>:
+    <%= mikomi.kansan %>:
+    <%= mikomi.user.name %>:
+    <% if current_user.id == mikomi.user.id %>
+      <%= link_to "編集", edit_mikomi_path(mikomi) %>
+      <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" } %>
+    <% end %>
+    </p>
   <% end %>
 <% else %>
   <p>ログインしなさい</p>
