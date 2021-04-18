@@ -1,4 +1,11 @@
 <h1>見込み一覧</h1>
+<p>名前を入れるとその人の見込みを検索できるぞ</p>
+<%= search_form_for @q do |f| %>
+  <%= f.label :user_name_cont, "名前" %>
+  <%= f.search_field :user_name_cont %>
+  <%= f.submit "検索" %>
+<% end %>
+
 <% if user_signed_in? %>
   <% @mikomis.each do |mikomi| %>
     <p>
