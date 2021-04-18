@@ -1,11 +1,20 @@
 <%= form_with model: @mikomi, local: true do |form| %>
-  <%= form.label :shohin, "商品名" %>
-  <%= form.select :shohin,
-  [
-    ["Best","Best"],["既成緩和","既成緩和"],["予防単体","予防単体"],["全部見直し","全部見直し"],["部分見直し","部分見直し"],["緩和見直し","緩和見直し"],["やさしい","やさしい"],["わくわくポッケ","わくわくポッケ"],["My介護Best","My介護Best"],["外貨年金","外貨年金"],
-  ], prompt: "商品を選んでください"
-   %>
-  <%= form.label :kansan, "換算" %><%= form.text_field :kansan %>
-  <%= form.label :constract_date, "予定日" %><%= form.datetime_field :constract_date %>
-  <%= form.submit "送信" %></a>
+  <div class="form-group">
+    <%= form.label :shohin, "商品名" %>
+    <%= form.select :shohin,
+    [
+      ["Best","Best"],["既成緩和","既成緩和"],["予防単体","予防単体"],["全部見直し","全部見直し"],["部分見直し","部分見直し"],["緩和見直し","緩和見直し"],["やさしい","やさしい"],["わくわくポッケ","わくわくポッケ"],["My介護Best","My介護Best"],["外貨年金","外貨年金"],
+    ], prompt: "商品を選んでください"
+    %>
+  </div>
+  <div class="form-group">
+    <%= form.label :kansan, "換算" %>
+    <%= form.text_field :kansan, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :constract_date, "予定日" %><%= form.datetime_field :constract_date, class: "form-control" %>
+  </div>
+  <div>
+  <%= form.submit "送信",class: "btn btn-info" %>
+  </div>
 <% end %>

@@ -1,7 +1,25 @@
-<% @mikomis.each do |mikomi| %>
-  <p><%= mikomi.shohin %><%= mikomi.kansan %></p>
-  <% if current_user.id == mikomi.user.id %>
-    <%= link_to "編集", edit_mikomi_path(mikomi) %>
-    <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" } %>
-  <% end %>
-<% end %>
+<table class="table table-striped">
+  <thead class="bg-info text-white">
+    <tr>
+      <th>商品</th>
+      <th>換算S</th>
+      <th>予定日</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mikomis.each do |mikomi| %>
+      <tr>
+        <td><%= mikomi.shohin %></td>
+        <td><%= mikomi.kansan %></td>
+        <td><%= mikomi.constract_date %></td>
+        <td>
+          <% if current_user.id == mikomi.user.id %>
+            <%= link_to "編集", edit_mikomi_path(mikomi),class: "btn btn-warning" %>
+            <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" },class: "btn btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

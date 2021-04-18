@@ -25,8 +25,8 @@
         <td><%= mikomi.constract_date %></td>
         <td>
         <% if current_user.id == mikomi.user.id %>
-          <%= link_to "編集", edit_mikomi_path(mikomi) %>
-          <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" } %>
+          <%= link_to "編集", edit_mikomi_path(mikomi), class: "btn btn-warning" %>
+          <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" },class: "btn btn-danger"  %>
         <% end %>
         </td>
       </tr>
