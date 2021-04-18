@@ -1,6 +1,2 @@
 <h1>見込みを入力</h1>
-<%= form_with model: @mikomi, local: true do |form| %>
-  <%= form.label :shohin, "商品名" %><%= form.text_field :shohin %>
-  <%= form.label :kansan, "換算" %><%= form.text_field :kansan %>
-  <%= form.submit "送信" %>
-<% end %>
+<%= render "form" %>

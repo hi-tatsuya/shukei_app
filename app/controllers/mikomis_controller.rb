@@ -21,6 +21,8 @@ class MikomisController < ApplicationController
   end
 
   def update
+    @mikomi.update(mikomi_params)
+    redirect_to root_path
   end
 
   private
