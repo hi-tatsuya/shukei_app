@@ -5,20 +5,34 @@
   <%= f.search_field :user_name_cont %>
   <%= f.submit "検索" %>
 <% end %>
-
 <% if user_signed_in? %>
-  <% @mikomis.each do |mikomi| %>
-    <p>
-    <%= mikomi.user.name %>:
-    <%= mikomi.shohin %>:
-    <%= mikomi.kansan %>:
-    <%= mikomi.constract_date %>
-    <% if current_user.id == mikomi.user.id %>
-      <%= link_to "編集", edit_mikomi_path(mikomi) %>
-      <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" } %>
+<table class="table table-striped">
+  <thead class="bg-info text-white">
+    <tr>
+      <th>名前</th>
+      <th>商品</th>
+      <th>換算S</th>
+      <th>予定日</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mikomis.each do |mikomi| %>
+      <tr>
+        <td><%= mikomi.user.name %></td>
+        <td><%= mikomi.shohin %></td>
+        <td><%= mikomi.kansan %></td>
+        <td><%= mikomi.constract_date %></td>
+        <td>
+        <% if current_user.id == mikomi.user.id %>
+          <%= link_to "編集", edit_mikomi_path(mikomi) %>
+          <%= link_to "削除", mikomi_path(mikomi), method: :delete, data: { confirm: "次がんばりましょう" } %>
+        <% end %>
+        </td>
+      </tr>
     <% end %>
-    </p>
-  <% end %>
+  </tbody>
+</table>
 <% else %>
   <p>ログインしなさい</p>
 <% end %>
