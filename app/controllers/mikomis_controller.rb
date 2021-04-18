@@ -1,7 +1,9 @@
 class MikomisController < ApplicationController
   before_action :set_mikomi, only: %i[destroy update edit]
+  PER_PAGE = 10
   def index
-    @mikomis = Mikomi.all
+    @mikomis = Mikomi.page(params[:page]).per(PER_PAGE)
+
   end
 
   def new
