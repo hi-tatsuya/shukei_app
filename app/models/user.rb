@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :mikomis, dependent: :destroy
+
+  validates :email, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 30 }
+
 end

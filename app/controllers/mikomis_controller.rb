@@ -11,20 +11,31 @@ class MikomisController < ApplicationController
   end
 
   def create
-    current_user.mikomis.create!(mikomi_params)
+    @mikomi = Mikomi.new(mikomi_params)
+    @mikomi.user_id = current_user.id
+    if @mikomi.save
+      redirect_to mikomis_path
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      render :new
+    end
   end
 
   def destroy
     @mikomi.destroy!
-    redirect_to root_path
+    redirect_to action: "index"
   end
 
   def edit
   end
 
   def update
-    @mikomi.update(mikomi_params)
-    redirect_to root_path
+    if @mikomi.update(mikomi_params)
+      redirect_to action: "index"
+    else
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   private
