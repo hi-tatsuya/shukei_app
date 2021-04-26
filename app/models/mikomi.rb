@@ -3,5 +3,4 @@ class Mikomi < ApplicationRecord
 
   validates :kansan, presence: true, length: { maximum: 10 }
   validates :shohin, presence: true
-  validates :constract_date, presence: true
 end
