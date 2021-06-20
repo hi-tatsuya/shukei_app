@@ -1,24 +1,21 @@
-# README
+○アプリケーション名 
+「見込み管理アプリ」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+○アプリケーション概要
+ 営業一人一人が自分の見込みを登録。個人個人はもちろん支社全体の見込み管理ができる。
 
-Things you may want to cover:
+○使用技術
+ruby 2.7.2 rails 6.1.3.2 PostgreSQL 13.2 Heroku
 
-* Ruby version
+○テスト用アカウント 
+name : kawakami
+メールアドレス： kawakami@test 
+パスワード : password
 
-* System dependencies
+○利用方法 
+各々が自分の見込みを登録する。管理職がそれを使い支社全体の見込み管理を行う。
 
-* Configuration
+○目指した課題解決 
+４０名近い営業職員の見込みを一人で把握するのは骨の折れる作業。紙で提出してもらっても刻一刻と状況は変わる。各々がアプリ上で登録することでリアルタイムの見込み管理ができるようになる。
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
