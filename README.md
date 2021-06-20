@@ -8,8 +8,8 @@
 ruby 2.7.2 rails 6.1.3.2 PostgreSQL 13.2 Heroku
 
 ○テスト用アカウント 
-name : kawakami
-メールアドレス： kawakami@test 
+name : 樋山
+メールアドレス： hiyama@test.test
 パスワード : password
 
 ○利用方法 
